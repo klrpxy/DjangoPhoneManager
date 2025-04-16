@@ -127,10 +127,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CAPTCHA_FONT_SIZE = 30
 CAPTCHA_IMAGE_SIZE = (150, 38)
 # 加减乘除验证码
-CAPTCHA_OUTPUT_FORMAT = '%(image)s %(text_field)s %(hidden_field)s '
-CAPTCHA_NOISE_FUNCTIONS = ('captcha.helpers.noise_null',
-                           'captcha.helpers.noise_arcs',  # 线
-                           'captcha.helpers.noise_dots',  # 点
-                           )
 CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
-CAPTCHA_TIMEOUT = 1

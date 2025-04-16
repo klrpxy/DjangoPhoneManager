@@ -1,0 +1,7 @@
+﻿{% for field in form %}
+    <div class="fieldWrapper">
+        {{ field.label_tag }}
+        <span style="color: red;">{{ field.errors.0 }}</span>
+        {{ field }}
+    </div>
+{% endfor %}

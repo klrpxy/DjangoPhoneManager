@@ -1,0 +1,44 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .login-box {
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #dddddd;
+            margin-top: 150px;
+            padding: 20px;
+        }
+
+        .login-box h2 {
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'plugin/bootstrap-5.3.3-dist/css/bootstrap.min.css' %}">
+    <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'plugin/bootstrap-5.3.3-dist/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<div class="login-box">
+    <h2>用户登入</h2>
+    <form method="post" action="." novalidate class="form-inline" role="form">
+        {% csrf_token %}
+        {{ form }}
+        <button style="margin-top: 10px" type="submit" class="btn btn-primary js-captcha-refresh">提 交</button>
+    </form>
+
+    <script>
+        $('.captcha').click(function () {
+            $.getJSON("/captcha/refresh/", function (result) {
+                $('.captcha').attr('src', result['image_url']);
+                $('#id_captcha_0').val(result['key'])
+            });
+        });
+    </script>
+</div>
+</body>
+</html>
