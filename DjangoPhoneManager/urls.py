@@ -16,8 +16,9 @@ Including another URLconf
 """
 
 
-from django.urls import path
+from django.urls import path, include
 from app_web import views
 urlpatterns = [
+    path("captcha/", include("captcha.urls")),
     path("login/", views.login)
 ]
