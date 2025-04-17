@@ -52,4 +52,4 @@ def login(request):
 
 
 def home(request):
-    return HttpResponse("HOME")
+    return render(request, "home.html")
