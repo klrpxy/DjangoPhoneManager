@@ -48,6 +48,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "utils.middleware.AuthMiddleware",
 ]
 
 ROOT_URLCONF = "DjangoPhoneManager.urls"

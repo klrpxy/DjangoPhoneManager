@@ -48,8 +48,8 @@ def login(request):
     request.session["info"] = {"id": admin_object.id, "name":admin_object.username}
     request.session.set_expiry(60 * 60 * 24 * 7)
 
-    return HttpResponse("验证成功")
+    return redirect("/home/")
 
 
-
-
+def home(request):
+    return HttpResponse("HOME")
